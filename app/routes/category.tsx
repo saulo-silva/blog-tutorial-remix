@@ -42,11 +42,11 @@ export const action = async ({ request }: ActionArgs) => {
   return redirect(`/category`);
 };
 
-const DeleteCatetory = ({ id }: { id: number }) => (
+const DeleteCategory = ({ id }: { id: number }) => (
   <Form method="post">
     <input type="hidden" name="_action" value="delete" />
     <input type="hidden" name="category_id" value={id} />
-    <button type="submit">Delete</button>
+    <button type="submit" className="rounded bg-red-500 text-white text-sm px-2 py-1">Delete</button>
   </Form>
 );
 
@@ -78,7 +78,7 @@ export default function Category() {
               <tr key={category.id} className="border">
                 <td className="p-2">{category.name}</td>
                 <td className="p-2 text-center">
-                  <DeleteCatetory id={category.id} />
+                  <DeleteCategory id={category.id} />
                 </td>
               </tr>
             ))}
