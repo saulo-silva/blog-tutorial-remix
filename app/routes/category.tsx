@@ -46,7 +46,12 @@ const DeleteCategory = ({ id }: { id: number }) => (
   <Form method="post">
     <input type="hidden" name="_action" value="delete" />
     <input type="hidden" name="category_id" value={id} />
-    <button type="submit" className="rounded bg-red-500 text-white text-sm px-2 py-1">Delete</button>
+    <button
+      type="submit"
+      className="rounded bg-red-500 px-2 py-1 text-sm text-white"
+    >
+      Delete
+    </button>
   </Form>
 );
 
@@ -98,7 +103,7 @@ export default function Category() {
             <input
               // ref={nameRef}
               name="name"
-              className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose"
+              className="input"
               aria-invalid={actionData?.errors?.name ? true : undefined}
               aria-errormessage={
                 actionData?.errors?.name ? "name-error" : undefined
