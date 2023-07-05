@@ -69,15 +69,15 @@ export default function Category() {
         <table className="w-full border">
           <thead>
             <tr>
-              <th className="p-2">Name</th>
-              <th className="p-2">Ação</th>
+              <th className="w-10/12 p-2 text-left">Name</th>
+              <th className="w-2/12 p-2">Ação</th>
             </tr>
           </thead>
           <tbody>
             {data.categories.map((category) => (
               <tr key={category.id} className="border">
                 <td className="p-2">{category.name}</td>
-                <td className="p-2">
+                <td className="p-2 text-center">
                   <DeleteCatetory id={category.id} />
                 </td>
               </tr>
