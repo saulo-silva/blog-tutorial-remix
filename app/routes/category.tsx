@@ -26,6 +26,7 @@ export const action = async ({ request }: ActionArgs) => {
   const id = parseInt(formData.get("category_id") as string, 10);
   const name = formData.get("name");
 
+  console.log(action);
   if (action === "delete" && id) {
     await deleteCategory({ id });
   }
