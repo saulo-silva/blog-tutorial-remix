@@ -1,4 +1,5 @@
 import type { ActionArgs } from "@remix-run/node";
+import { useEffect, useRef } from "react";
 import { json } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import {
@@ -12,7 +13,6 @@ import {
   deleteCategory,
   getCategories,
 } from "~/models/category.server";
-import { useEffect, useRef } from "react";
 
 export const loader = async ({ request }: ActionArgs) => {
   const categories = await getCategories();
@@ -26,7 +26,6 @@ export const action = async ({ request }: ActionArgs) => {
   const id = parseInt(formData.get("category_id") as string, 10);
   const name = formData.get("name");
 
-  console.log(action);
   if (action === "delete" && id) {
     await deleteCategory({ id });
   }
